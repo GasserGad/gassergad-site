@@ -9,7 +9,7 @@ The page is split into sections, each marked with a comment you can search for:
 | Search for | What it is |
 |---|---|
 | `HERO` | Big headline, intro, "Open to roles" badge, the four stats |
-| `TECH MARQUEE` | The two scrolling rows of technologies (each row is listed twice so the loop is seamless, so change both copies) |
+| `TECH MARQUEE` | The moving bar of main technologies (the list is written twice so the loop is seamless, so change both copies) |
 | `01 ABOUT` | About paragraph and the three facts under it |
 | `02 WORK` | Project cards. Each starts with `<!-- PROJECT: name -->` |
 | `03 STACK` | The skill tiles |
@@ -63,4 +63,4 @@ Replace `assets/gasser-gadabdelkader-resume.pdf` with a new file of the same nam
 
 ## Accessibility and performance
 
-The site respects "reduce motion" in the operating system: animations, the 3D movement and the light beams turn off. Phones get fewer beams and no cursor effects.
+All motion runs for every visitor, even if their operating system has "reduce motion" turned on. To respect that setting instead, change `const reduce = false` near the top of `js/main.js` back to `matchMedia("(prefers-reduced-motion: reduce)").matches`. Phones get fewer beams and no cursor effects.

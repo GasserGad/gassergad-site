@@ -32,7 +32,7 @@
   const form = $("#compose"), open = $("#composeBtn"), sub = $("#cfSub"), body = $("#cfBody");
   if (!form) return;
   body.value = START;
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = false;
 
   function show(on) {
     open.setAttribute("aria-expanded", on);

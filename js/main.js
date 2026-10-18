@@ -5,7 +5,7 @@
    ========================================================= */
 (() => {
   const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = false; // full motion for everyone (the site ignores the OS "reduce motion" setting by choice)
   const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
   const desktop = () => innerWidth > 1020;
   gsap.registerPlugin(ScrollTrigger);
@@ -56,7 +56,7 @@
     geo.setAttribute("aRand", new THREE.BufferAttribute(rnd, 1));
     const mat = new THREE.ShaderMaterial({
       transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
-      uniforms: { uTime: { value: 0 }, uSize: { value: 2.7 }, uPix: { value: renderer.getPixelRatio() }, uAlpha: { value: 1 } },
+      uniforms: { uTime: { value: 0 }, uSize: { value: 2.7 * Math.max(1, Math.min(1.8, innerHeight / 800)) }, uPix: { value: renderer.getPixelRatio() }, uAlpha: { value: 1 } },
       vertexShader: `attribute float aRand; uniform float uTime, uSize, uPix; varying float vR; varying float vD;
         void main(){ vec3 p = position; p += 0.05 * sin(uTime * 1.3 + aRand * 6.2831) * normalize(p + 0.0001);
           vec4 mv = modelViewMatrix * vec4(p, 1.0); gl_Position = projectionMatrix * mv;
@@ -81,14 +81,14 @@
     function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
     resize(); addEventListener("resize", resize);
     addEventListener("pointermove", (e) => { mouse.tx = e.clientX / innerWidth - .5; mouse.ty = e.clientY / innerHeight - .5; }, { passive: true });
-    const cur = new Float32Array(3); let born = reduce ? 1 : 0, last = performance.now();
+    const cur = new Float32Array(3); let born = 0, last = performance.now();
     const ease = (t) => t * t * (3 - 2 * t);
     function tick(now) {
       const dt = Math.min(0.05, (now - last) / 1000); last = now;
       mat.uniforms.uTime.value = now / 1000;
       born = Math.min(1, born + dt * 0.6);
       const p = shapeP(), i0 = Math.min(3, Math.floor(p)), f = ease(Math.min(1, p - i0)), A = T[i0], B = T[Math.min(4, i0 + 1)];
-      const k = reduce ? 1 : 1 - Math.pow(0.004, dt), grow = reduce ? 1 : 0.05 + 0.95 * ease(born);
+      const k = 1 - Math.pow(0.004, dt), grow = 0.05 + 0.95 * ease(born);
       for (let j = 0; j < N * 3; j++) { const t = (A[j] + (B[j] - A[j]) * f) * grow; pos[j] += (t - pos[j]) * k; }
       geo.attributes.position.needsUpdate = true;
       const O = OFF(), oa = O[i0], ob = O[Math.min(4, i0 + 1)];
@@ -96,14 +96,13 @@
       group.position.x += (cur[0] - group.position.x) * 0.06; group.position.y += (cur[1] - group.position.y) * 0.06;
       mat.uniforms.uAlpha.value += (cur[2] - mat.uniforms.uAlpha.value) * 0.06;
       mouse.x += (mouse.tx - mouse.x) * 0.05; mouse.y += (mouse.ty - mouse.y) * 0.05;
-      if (!reduce) { group.rotation.y += dt * 0.12; }
+      group.rotation.y += dt * 0.12; // the core always drifts, even with "reduce motion" on
       group.rotation.x = 0.25 + mouse.y * 0.5; pts.rotation.z = mouse.x * 0.35;
       camera.position.x = mouse.x * 0.8; camera.position.y = -mouse.y * 0.5; camera.lookAt(0, 0, 0);
       renderer.render(scene, camera);
-      if (!reduce) requestAnimationFrame(tick);
+      requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
-    if (reduce) addEventListener("scroll", () => requestAnimationFrame(tick), { passive: true });
   }
 
   /* ---------- intro ---------- */
@@ -145,7 +144,7 @@
     const xFor = (i) => view.clientWidth / 2 - (cards[i].offsetLeft + cards[i].offsetWidth / 2);
     function go(i, instant) {
       at = Math.max(0, Math.min(cards.length - 1, i));
-      const dur = instant || reduce ? 0 : LOOK.duration;
+      const dur = instant ? 0 : LOOK.duration;
       gsap.to(track, { x: xFor(at), duration: dur, ease: LOOK.ease, overwrite: true });
       cards.forEach((c, j) => {
         const off = j - at, on = off === 0;
@@ -154,7 +153,7 @@
         c.inert = !on;
       });
       const mock = $(".mock", cards[at]);
-      if (mock && !instant && !reduce) gsap.fromTo(mock, { y: 30, rotateX: 8, opacity: 0.4 }, { y: 0, rotateX: 0, opacity: 1, duration: 1.2, ease: "expo.out", delay: 0.12 });
+      if (mock && !instant) gsap.fromTo(mock, { y: 30, rotateX: 8, opacity: 0.4 }, { y: 0, rotateX: 0, opacity: 1, duration: 1.2, ease: "expo.out", delay: 0.12 });
       dotEls.forEach((d, j) => { d.classList.toggle("on", j === at); d.setAttribute("aria-current", j === at); });
       wc.textContent = String(at + 1).padStart(2, "0");
       prev.disabled = at === 0; next.disabled = at === cards.length - 1;

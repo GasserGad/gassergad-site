@@ -13,7 +13,7 @@
     HEAD: "#ffd2b0",     // color of the bright dot at the front
   };
 
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduce = false;
   const fine = matchMedia("(hover: hover) and (pointer: fine)").matches;
   const root = document.documentElement;
   const grid = document.querySelector(".gridbg");
@@ -39,8 +39,7 @@
     b.style.setProperty("--gy", e.clientY - r.top + "px");
   }));
 
-  /* light pulses running along the grid lines */
-  if (reduce) return;
+  /* light pulses running along the grid lines (always on: they are slow, background-only motion) */
   const c = grid.querySelector("canvas"), x = c.getContext("2d");
   const max = fine ? SETTINGS.MAX_BEAMS : SETTINGS.MAX_BEAMS_PHONE;
   let W, H, dpr, beams = [];

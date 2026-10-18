@@ -7,7 +7,7 @@ My personal site. It's a single static page: plain HTML, CSS and JavaScript with
 ## What's on it
 
 - A 3D particle core (Three.js) that changes shape as you scroll
-- Scroll animations and a sideways-scrolling project section (GSAP + ScrollTrigger)
+- Scroll animations and a project slider with arrows, swipe and arrow keys (GSAP + ScrollTrigger)
 - Smooth scrolling (Lenis)
 - A faint grid behind the page with light pulses running along it
 - Frosted glass panels over drifting gradient light
