@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gasser Gadabdelkader · Software engineer</title>
+<meta name="description" content="Gasser Gadabdelkader is a software engineer in Brooklyn and a 2026 CUNY computer science grad. He builds whole apps, front end to back end, then tests, secures and ships them.">
+<meta name="theme-color" content="#0e0f11">
+<meta property="og:title" content="Gasser Gadabdelkader · Software engineer">
+<meta property="og:description" content="Software engineer in Brooklyn. Front end, back end, and everything that keeps them running.">
+<meta property="og:url" content="https://gassergad.com/">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff6a1a'/%3E%3Cpath d='M21 11.5A7 7 0 1 0 22.5 18H16' fill='none' stroke='%230e0f11' stroke-width='3.4' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+<!-- Background layers (back to front): drifting gradient light, grid with light beams, cursor spotlight, 3D particles, film grain, cursor -->
+<div class="mesh" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="gridbg" aria-hidden="true"><div class="g"></div><div class="g lit"></div><canvas></canvas></div>
+<div class="spot" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cur" aria-hidden="true"></div><div class="ring" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="logo" href="#hero" data-mag><i><svg viewBox="0 0 24 24" fill="none" stroke="#120904" stroke-width="3.2" stroke-linecap="round"><path d="M17 8.5A6 6 0 1 0 18 14h-5"/></svg></i>Gasser</a>
+  <nav class="links" aria-label="Primary"><a href="#about">About</a><a href="#work">Work</a><a href="#stack">Stack</a><a href="#journey">Journey</a><a href="#contact">Contact</a></nav>
+  <div class="nav-r">
+    <button class="kbtn" type="button" id="kbtn" aria-label="Open command palette" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Search</span><kbd><b class="mod">Ctrl</b> K</kbd></button>
+    <span class="open beam" style="--beam-bg:#16171a"><i class="pulse g"></i><span>Open to roles</span></span>
+    <a class="btn sm" href="assets/gasser-gadabdelkader-resume.pdf" download data-mag>Resume</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <!-- ============ HERO ============ -->
+  <section class="hero container" id="hero" data-shape="0">
+    <p class="kicker r-up"><i class="pulse"></i><b>Gasser Gadabdelkader</b><span class="k2"> / Software engineer / Brooklyn, NY</span></p>
+    <h1 class="h-title"><span class="sr">Gasser Gadabdelkader, software engineer. </span><span class="ln"><span>Building</span></span><span class="ln"><span>software</span></span><span class="ln"><span>that <em>ships.</em></span></span></h1>
+    <p class="h-sub r-up">Software engineer and <b>2026 CUNY computer science grad</b>. I build whole apps, from the database to the interface, then test them, secure them and put them in production.</p>
+    <p class="h-badge beam r-up"><i class="pulse g"></i><b>Open to roles</b> · remote anywhere in the US, or NYC in person or hybrid</p>
+    <div class="h-cta r-up">
+      <a class="btn pri" href="#work" data-mag>View my work<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn" href="#contact" data-mag>Get in touch</a>
+    </div>
+    <div class="stats r-up">
+      <div class="stat"><b><em data-count="121">0</em></b><small>automated tests across my live apps</small></div>
+      <div class="stat"><b><em data-count="2">0</em></b><small>apps live in production</small></div>
+      <div class="stat"><b><em data-count="24">0</em></b><small>languages LingoBuddy translates</small></div>
+      <div class="stat"><b>A<span>/</span>A-</b><small>core CS coursework, CUNY</small></div>
+    </div>
+    <div class="scrollhint" aria-hidden="true"><i></i>scroll</div>
+  </section>
+
+  <!-- ============ TECH MARQUEE: only things I have used in class or in my projects (each row is listed twice for a seamless loop) ============ -->
+  <div class="marquee" aria-label="Technologies I use">
+    <div class="mrow"><span>JavaScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>React</span><span>HTML</span><span>CSS</span><span>Python</span><span>C++</span><span>C</span><span>Lua</span><span>JavaScript</span><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span><span>React</span><span>HTML</span><span>CSS</span><span>Python</span><span>C++</span><span>C</span><span>Lua</span></div>
+    <div class="mrow rev" aria-hidden="true"><span>Docker</span><span>Linux</span><span>Git</span><span>GitHub Actions</span><span>REST APIs</span><span>JWT auth</span><span>Electron</span><span>Bootstrap</span><span>Three.js</span><span>Pthreads</span><span>ARM assembly</span><span>Supertest</span><span>CodeQL</span><span>Claude API</span><span>MCP</span><span>Docker</span><span>Linux</span><span>Git</span><span>GitHub Actions</span><span>REST APIs</span><span>JWT auth</span><span>Electron</span><span>Bootstrap</span><span>Three.js</span><span>Pthreads</span><span>ARM assembly</span><span>Supertest</span><span>CodeQL</span><span>Claude API</span><span>MCP</span></div>
+  </div>
+
+  <!-- ============ 01 ABOUT ============ -->
+  <section class="s container" id="about" data-shape="1">
+    <p class="eyebrow"><b>01</b><i></i>About</p>
+    <p class="about-txt" id="aboutTxt">I'm Gasser, a software engineer from Bay Ridge, Brooklyn. I build the whole thing: interfaces people can actually use, APIs that stay up when everything upstream is slow, payroll that can never pay twice, and the tests and servers that keep it all running.</p>
+    <div class="about-meta"><span><i></i>B.S. Computer Science, CUNY College of Staten Island</span><span><i></i>Arabic and English</span><span><i></i>Remote across the US, or NYC in any format</span></div>
+  </section>
+
+  <!-- ============ 02 WORK (a slider: arrows, dots, drag/swipe, arrow keys) ============ -->
+  <section class="work" id="work" data-shape="2">
+    <div class="work-stage">
+      <div class="container work-head">
+        <div><p class="eyebrow"><b>02</b><i></i>Selected work</p><h2 class="s-title">Shipped, live, <em>and tested.</em></h2></div>
+        <div class="wctl">
+          <p class="work-count" aria-live="polite"><b id="wc">01</b> / <span id="wt">04</span></p>
+          <button class="btn arr" type="button" id="wPrev" aria-label="Previous project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+          <button class="btn arr" type="button" id="wNext" aria-label="Next project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="viewport" id="wView" aria-roledescription="carousel" aria-label="Projects">
+      <div class="track" id="track">
+        <!-- PROJECT: CompenStation -->
+        <article class="card">
+          <div class="shot">
+            <div class="mock" aria-hidden="true">
+              <div class="mbar"><i></i><i></i><i></i><span>compenstation.gassergad.com/payroll</span></div>
+              <div class="mbody">
+                <div class="mrowh"><b>Pay period · Jun 1 to 15</b><span class="pill">4 approved</span></div>
+                <table class="mt"><thead><tr><th>Employee</th><th>Hours</th><th>Gross</th><th>Net</th></tr></thead>
+                <tbody><tr><td>J. Smith</td><td>80.00</td><td>$2,480.00</td><td>$1,923.80</td></tr><tr><td>A. Rivera</td><td>76.50</td><td>$2,371.50</td><td>$1,835.91</td></tr><tr><td>M. Chen</td><td>84.25</td><td>$2,611.75</td><td>$2,030.51</td></tr><tr><td>D. Okafor</td><td>72.00</td><td>$2,232.00</td><td>$1,722.92</td></tr></tbody></table>
+                <div class="mbtn">Run payroll<span>1 transaction · all or nothing</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <span class="num">01 · Jan 2026 to now</span>
+            <h3>CompenStation</h3>
+            <p class="tg">Payroll for small teams</p>
+            <ul>
+              <li>Owned the backend, API and security on a five-person team, then rebuilt it solo.</li>
+              <li>One database transaction per run, with row locks and a unique constraint. Nobody gets paid twice.</li>
+              <li>Money in cents, scrypt hashing, CSRF checks, rate limits, audit log.</li>
+              <li>45 automated tests, 27 of them against a real PostgreSQL database, plus CodeQL and gitleaks in CI.</li>
+            </ul>
+            <div class="tags"><span>Node.js</span><span>Express</span><span>PostgreSQL</span><span>Zod</span><span>Docker</span></div>
+            <div class="acts"><a class="btn pri sm" href="https://compenstation.gassergad.com" target="_blank" rel="noopener" data-mag>Live app<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn sm" href="https://github.com/GasserGad/CompenStation" target="_blank" rel="noopener" data-mag>Code</a><span class="live" data-status="/status/compenstation"><i></i><span>checking</span></span></div>
+          </div>
+        </article>
+
+        <!-- PROJECT: CS2 H2H -->
+
+        <article class="card">
+          <div class="shot">
+            <div class="mock" aria-hidden="true">
+              <div class="mbar"><i></i><i></i><i></i><span>h2h.gassergad.com</span></div>
+              <div class="mbody">
+                <div class="duel">
+                  <div class="pl"><span class="av o">ZY</span><div><b>zywo_fan</b><small>Level 10 · 2,941</small></div></div>
+                  <span class="vs">VS</span>
+                  <div class="pl r"><span class="av">DU</span><div><b>duo_partner</b><small>Level 8 · 1,876</small></div></div>
+                </div>
+                <div class="cmp">
+                  <div class="cmpr"><span>1.31</span><span class="bar2"><i style="width:62%"></i></span><span>1.08</span><em>K/D ratio</em></div>
+                  <div class="cmpr"><span>58%</span><span class="bar2"><i style="width:56%"></i></span><span>51%</span><em>Win rate</em></div>
+                  <div class="cmpr"><span>47%</span><span class="bar2"><i style="width:44%"></i></span><span>53%</span><em>Headshots</em></div>
+                </div>
+                <div class="shared"><b>12 shared matches</b> · 7 to 2 together · 1 to 2 against</div>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <span class="num">02 · Mar 2026 to now</span>
+            <h3>CS2 H2H</h3>
+            <p class="tg">Head-to-head stats for FACEIT players</p>
+            <ul>
+              <li>Finds every match two players shared as teammates or opponents. FACEIT doesn't show this.</li>
+              <li>Search suggestions as you type, with keyboard and screen reader support.</li>
+              <li>Caching, rate limiting and request queueing survive a slow upstream API.</li>
+              <li>Versioned releases, a changelog and 76 tests on every pull request.</li>
+            </ul>
+            <div class="tags"><span>Node.js</span><span>Express 5</span><span>FACEIT API</span><span>CodeQL</span><span>v1.1.1</span></div>
+            <div class="acts"><a class="btn pri sm" href="https://h2h.gassergad.com" target="_blank" rel="noopener" data-mag>Live app<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn sm" href="https://github.com/GasserGad/cs2-faceit-comparison-tool" target="_blank" rel="noopener" data-mag>Code</a><span class="live" data-status="/status/h2h"><i></i><span>checking</span></span></div>
+          </div>
+        </article>
+
+        <!-- PROJECT: LingoBuddy -->
+
+        <article class="card">
+          <div class="shot">
+            <div class="mock" aria-hidden="true">
+              <div class="mbar"><i></i><i></i><i></i><span>LingoBuddy overlay · auto-translate on</span></div>
+              <div class="chat">
+                <p><span class="who">[Trade] Lucía:</span> ¿alguien vende mineral de hierro?<span class="tr">anyone selling iron ore?</span></p>
+                <p><span class="who">[Party] Kenji:</span> ボス前で待ってる<span class="tr">waiting outside the boss</span></p>
+                <p><span class="who">[Guild] Omar:</span> <bdi lang="ar" dir="rtl" style="font-family:var(--ar)">مين جاي الريد الليلة؟</bdi><span class="tr">who's coming to the raid tonight?</span></p>
+                <p><span class="who">[Say] Anna:</span> danke für die Hilfe!<span class="tr">thanks for the help!</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="info">
+            <span class="num">03 · 2026 to now</span>
+            <h3>LingoBuddy</h3>
+            <p class="tg">Live chat translation for games</p>
+            <ul>
+              <li>Electron overlay that reads World of Warcraft's chat log as it's written.</li>
+              <li>Detects each message's language and translates only the foreign ones, across 24 languages.</li>
+              <li>Companion Lua addon flags translated messages in game.</li>
+              <li>Being rebuilt from scratch for World of Warcraft: Forever.</li>
+            </ul>
+            <div class="tags"><span>Electron</span><span>Lua</span><span>Translation APIs</span></div>
+            <div class="acts"><a class="btn sm" href="https://github.com/GasserGad" target="_blank" rel="noopener" data-mag>Follow on GitHub</a><span class="live dev"><i></i><span>in development</span></span></div>
+          </div>
+        </article>
+
+        <article class="card more">
+          <h3>Always building something.</h3>
+          <p>Smaller tools, coursework and experiments live on GitHub.</p>
+          <div><a class="btn" href="https://github.com/GasserGad" target="_blank" rel="noopener" data-mag>github.com/GasserGad<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+        </article>
+      </div>
+      </div>
+      <div class="container wnav"><div class="dots" id="wDots"></div><span class="whint">Drag, swipe or use the ← → keys</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 03 STACK ============ -->
+  <section class="s container" id="stack" data-shape="3">
+    <p class="eyebrow"><b>03</b><i></i>Stack</p>
+    <h2 class="s-title">Front to back, <em>and everything around it.</em></h2>
+    <div class="bento" id="bento">
+      <div class="tile t-a">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></div>
+        <h3>Backend</h3>
+        <p class="t">Node.js and Express APIs that treat correctness as a feature: transactions, validation, and errors that say what happened.</p>
+        <div class="code"><small>simplified from CompenStation</small><span class="k">await</span> db.<span class="f">transaction</span>(<span class="k">async</span> (tx) <span class="k">=&gt;</span> {
+  <span class="k">const</span> period = <span class="k">await</span> tx.<span class="f">lockPeriod</span>(id);  <span class="c">// row lock</span>
+  <span class="k">if</span> (period.paid) <span class="k">throw new</span> <span class="f">AlreadyPaid</span>();
+
+  <span class="k">for</span> (<span class="k">const</span> e <span class="k">of</span> period.approved) {
+    <span class="k">await</span> tx.<span class="f">insertStub</span>(<span class="f">calcCents</span>(e)); <span class="c">// no floats</span>
+  }
+  <span class="k">await</span> tx.<span class="f">markPaid</span>(id);  <span class="c">// unique constraint</span>
+});</div>
+      </div>
+      <div class="tile t-b">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Security</h3>
+        <p class="t">Owned security on the team project, and built the same habits into everything since.</p>
+        <div class="chips"><span>scrypt hashing</span><span>HttpOnly sessions</span><span>CSRF</span><span>CSP</span><span>rate limiting</span><span>audit log</span><span>CodeQL</span><span>gitleaks</span></div>
+      </div>
+      <div class="tile">
+        <h3>Testing and CI</h3>
+        <ul class="ci" id="ci"><li><i></i>lint<span>eslint</span></li><li><i></i>tests<span>node:test</span></li><li><i></i>npm audit<span>deps</span></li><li><i></i>CodeQL<span>sast</span></li><li><i></i>gitleaks<span>secrets</span></li></ul>
+      </div>
+      <div class="tile">
+        <h3>Data</h3>
+        <p class="t">Schema design, indexing, transactions and safe queries.</p>
+        <div class="chips"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Redis</span></div>
+      </div>
+      <div class="tile t-e">
+        <h3>Down to the metal</h3>
+        <p class="t">C, C++ and Pthreads on Linux, and ARM (LEGv8) assembly from Computer Architecture.</p>
+        <div class="enc" aria-label="ADD X9, X20, X21 encoded as 0x8B150289"><div style="flex:11"><small>opcode</small><code>10001011000</code></div><div style="flex:5"><small>Rm</small><code>10101</code></div><div style="flex:6"><small>shamt</small><code>000000</code></div><div style="flex:5"><small>Rn</small><code>10100</code></div><div style="flex:5"><small>Rd</small><code>01001</code></div></div>
+        <div class="encl"><span>ADD X9, X20, X21</span><b>0x8B150289</b></div>
+      </div>
+      <div class="tile">
+        <h3>Frontend</h3>
+        <p class="t">Interfaces that work for everyone, like H2H's search suggestions with full keyboard and screen reader support.</p>
+        <div class="chips"><span>React</span><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Bootstrap</span><span>Three.js</span></div>
+      </div>
+      <div class="tile">
+        <h3>AI</h3>
+        <p class="t">Claude API and Model Context Protocol, with four Anthropic course certificates.</p>
+        <p class="big">4<span>×</span></p>
+      </div>
+      <div class="tile t-w">
+        <div><h3>Shipping it</h3>
+        <p class="t">Both apps run on my own Linux server, not a click-to-deploy platform. I set up the server, HTTPS and health checks myself.</p></div>
+        <ol class="pipe" aria-label="How a change goes live"><li>git push</li><li>lint + tests</li><li>CodeQL scan</li><li>Linux server</li><li class="live-step">live on HTTPS</li></ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 JOURNEY (copy a <div class="ev"> to add a milestone) ============ -->
+  <section class="s container" id="journey" data-shape="3">
+    <p class="eyebrow"><b>04</b><i></i>Journey</p>
+    <h2 class="s-title">How I <em>got here.</em></h2>
+    <div class="tl" id="tl"><span class="fill" id="tlFill"></span>
+      <div class="ev"><time>2018 to 2020</time><h3>Freelance Discord developer</h3><p>Built custom bots for clients (moderation, custom commands), set up roles and permissions, and connected servers to outside services with webhooks.</p></div>
+      <div class="ev"><time>2022 to 2023</time><h3>Warehouse associate, Amazon</h3><p>Picked, packed and quality-checked orders on a high-volume floor in Brooklyn.</p></div>
+      <div class="ev"><time>January 2026</time><h3>CompenStation begins</h3><p>A five-person team project. I owned the backend, API routing and security, and my teammates built on my endpoints.</p></div>
+      <div class="ev"><time>March 2026</time><h3>CS2 H2H, first release</h3><p>A solo, open-source tool for FACEIT players, built because the stat I wanted didn't exist.</p></div>
+      <div class="ev"><time>June 2026</time><h3>B.S. Computer Science, CUNY College of Staten Island</h3><p>Core coursework finished with A and A- grades. Computer Science Club and Esports Club.</p><div class="chips"><span>Operating Systems + Lab</span><span>Computer Architecture</span><span>Database Systems</span><span>Software Engineering</span><span>Cybersecurity Fundamentals</span><span>Digital Systems Design</span><span>Data Structures</span><span>Algorithms</span></div></div>
+      <div class="ev"><time>September 2026</time><h3>Anthropic course certificates</h3><p>Building with the Claude API, Introduction to MCP, MCP Advanced Topics, and Introduction to Subagents.</p></div>
+      <div class="ev"><time>October 2026</time><h3>Both apps go live on gassergad.com</h3><p>CompenStation and CS2 H2H move to their own homes. H2H 1.1 ships with search suggestions.</p></div>
+      <div class="ev"><time>Now</time><h3>Rebuilding LingoBuddy, and looking for my first team</h3><p>Open to backend, full-stack and front-end roles, plus security, DevOps and cloud, QA and test automation, and IT support.</p></div>
+    </div>
+  </section>
+
+  <!-- ============ 05 CONTACT ============ -->
+  <section class="s container contact" id="contact" data-shape="4">
+    <p class="eyebrow"><b>05</b><i></i>Contact</p>
+    <h2 class="c-title">Let's build something <em>real.</em></h2>
+    <p class="c-sub">Hiring, collaborating, or just want to talk shop? I reply fast. Remote anywhere in the US, or remote, hybrid or in person in New York City.</p>
+    <div class="mailbox beam"><a href="mailto:hello@gassergad.com" id="mailAddr" title="Click to copy">hello@gassergad.com</a><span class="mb-acts"><button class="btn sm" type="button" id="copy"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copy</span></button><button class="btn pri sm" type="button" id="composeBtn" aria-expanded="false" aria-controls="compose"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m14 6 4 4"/></svg>Write me</button></span></div>
+    <!-- Email composer: fills in a ready-to-send email in the visitor's Gmail, Outlook or mail app (js/contact.js) -->
+    <form class="compose" id="compose" hidden>
+      <div class="cf-to"><span>To</span><b>hello@gassergad.com</b></div>
+      <label class="cf"><span>Subject</span><input id="cfSub" name="subject" maxlength="140" placeholder="Software engineer role at …" autocomplete="off"></label>
+      <label class="cf"><span>Message</span><textarea id="cfBody" name="body" rows="6" maxlength="4000"></textarea></label>
+      <div class="cf-acts"><span>Open it in</span><button class="btn pri sm" type="submit" data-via="gmail">Gmail</button><button class="btn sm" type="button" data-via="outlook">Outlook</button><button class="btn sm" type="button" data-via="mail">Mail app</button></div>
+    </form>
+    <div class="c-acts">
+      <a class="btn" href="https://www.linkedin.com/in/gasser-gadabdelkader" target="_blank" rel="noopener" data-mag><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+      <a class="btn" href="https://github.com/GasserGad" target="_blank" rel="noopener" data-mag><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.3 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>GitHub</a>
+      <a class="btn" href="assets/gasser-gadabdelkader-resume.pdf" download data-mag><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Resume (PDF)</a>
+    </div>
+    <p class="c-meta"><span>Brooklyn, NY · <b id="clock">--:--</b></span><span>Arabic · English</span></p>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container foot"><span>© 2026 Gasser Gadabdelkader</span><span>Hand-built with Three.js, GSAP and Lenis</span><a href="#hero">Back to top ↑</a></div>
+    <div class="giant" aria-hidden="true">GASSER<span lang="ar">جاسر</span></div>
+  </footer>
+</div>
+
+<!-- Command palette (commands are in js/palette.js) -->
+<div class="pal-ov" id="pal"><div class="pal" role="dialog" aria-modal="true" aria-label="Command palette">
+  <div class="pal-in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="palQ" placeholder="Type a command or search…" autocomplete="off" spellcheck="false" aria-label="Search commands"><kbd>esc</kbd></div>
+  <div class="pal-res" id="palRes" role="listbox"></div>
+  <div class="pal-foot"><span>↑↓ navigate</span><span>↵ open</span><span>esc close</span></div>
+</div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- Free libraries, self-hosted: Three.js (3D), GSAP + ScrollTrigger (animation), Lenis (smooth scroll) -->
+<script src="vendor/three.min.js"></script>
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/grid.js"></script>
+<script src="js/palette.js"></script>
+<script src="js/contact.js"></script>
+</body>
+</html>
